@@ -23,6 +23,10 @@ echo "Building $1 for $2"
 mkdir -p $GITHUB_WORKSPACE/build/${SubDirectoryLocation:-""}
 cd "$GITHUB_WORKSPACE/$5"
 
+#timeout 25s godot --headless -e
+echo $GITHUB_WORKSPACE 
+ls
+
 godot --headless --${mode} "$2" $GITHUB_WORKSPACE/build/${SubDirectoryLocation:-""}$1
 echo "Build Done"
 
